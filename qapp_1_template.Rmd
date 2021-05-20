@@ -1,0 +1,86 @@
+---
+author: "Demo 1: Document Template"
+date: "`r format(Sys.Date(), '%m/%d/%Y')`"
+output:
+  word_document:
+    reference_docx: C:/Users/ygrund/ygrund_C_Users/PROJECTS/20210504_NWMOD/Demo/data/Report_Template.docx
+    keep_md: yes
+    toc: yes
+    fig_caption: yes
+    fig_width: 12
+    fig_height: 6
+  officedown::rdocx_document:
+  html_document:
+    toc: yes
+    df_print: paged
+---
+
+---
+title: "`r paste0("Modeling Quality Assurance Project Plan for the ", qapp_project_area, " Temperature Total Maximum Daily Load")`"
+---
+
+```{r, label=`setup`, include=FALSE}
+options(knitr.duplicate.label = 'allow')
+options(knitr.kable.NA = '')
+options(tinytex.verbose = TRUE)
+
+knitr::opts_chunk$set(results = "asis",
+                      warning = FALSE,
+                      error = FALSE,
+                      message = FALSE,
+                      autodep = TRUE)
+
+library(knitr); library(kableExtra)
+library(officedown);library(officer)
+library(tidyverse)
+library(captioner)
+library(readxl)
+library(lubridate)
+library(flextable)
+library(sf); library(sp)
+library(rgdal)
+library(ggplot2)
+library(stringr);library(stringi)
+library(english)
+library(pacman)
+library(httr)
+
+tbls  <- captioner::captioner(prefix="Table")
+figs <- captioner::captioner(prefix="Figure")
+eqns <- captioner::captioner(prefix="Equation")
+
+```
+
+# Introduction
+#	Problem Definition and Management Objectives
+# Conceptual Model: Key Processes and Variables
+# Technical Approach
+## Overview
+## Model Selection
+## Software Development Quality Assessment
+# Model Development
+## Model Boundaries
+## Spatial and Temporal Resolution
+## Source Characteristics
+## Data Availability and Quality
+## Time Frame of Simulation
+## Data Gaps
+## Important Assumptions
+## Model Calibration
+## Model Parameters
+# Model Evaluation and Acceptance
+## Model Uncertainty and Sensitivity
+## Model Acceptance
+# Documentation in Model Reports
+# Peer Review
+# Management Scenarios
+# Project Organization
+## Project Team/Roles
+## Expertise and Special Training Requirements
+## Reports to Management
+## Project Schedule
+# Data Management
+# Recordkeeping and Archiving
+# QAPP Review and Approval
+# Implementation and Adaptive Management
+# References
