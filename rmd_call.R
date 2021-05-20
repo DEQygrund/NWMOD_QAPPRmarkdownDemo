@@ -39,3 +39,16 @@ for (qapp_project_area in project.areas$qapp_area) {
                     output_file=paste0("QAPP_",qapp_project_area, ".docx"))
   
 }
+
+# Demo 4: Branches ----
+output.dir <- "C:/Users/ygrund/ygrund_C_Users/PROJECTS/20210504_NWMOD/Demo/qapp/Demo_4"
+#for (qapp_project_area in project.areas$qapp_area) {
+  
+  qapp_project_area <- "John Day River Basin"
+  
+  rmarkdown::render(input="C:/Users/ygrund/ygrund_C_Users/PROJECTS/20210504_NWMOD/Demo/NWMOD_QAPPRmarkdownDemo_Branches/JohnDay/qapp_4_branch.Rmd",
+                    output_format = "word_document",
+                    output_dir = output.dir,
+                    output_file=paste0("QAPP_",qapp_project_area, ".docx"))
+  
+#}
